@@ -2,7 +2,7 @@ const got = {
   houses: [
     {
       name: "Starks",
-      people: [
+      people: [ 
         {
           name: "Eddard Stark",
           description:
