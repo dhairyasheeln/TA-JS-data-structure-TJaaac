@@ -67,9 +67,9 @@ let person = {
 let personTwo = { ...person, address: { ...person.address } };
 
 person.firstName = 'Arya';
-person.city = 'Navada';
+person.city = 'Navada';//Implemented incorrectly in automated feedback
 
-console.log(personTwo.firstName); // 'John'
+console.log(personTwo.first Name); // 'John'
 console.log(person.firstName); // 'Arya'
 console.log(personTwo.lastName); // 'Doe'
 console.log(person.firstName === personTwo.firstName); // false
@@ -104,6 +104,12 @@ let blogs = [
 ];
 
 // Your code goes here
+```js
+let clonedBlogs=[
+  {...blogs[0]},
+  {...blogs[1]},
+  {...blogs[2]},
+];
 ```
 
 5. Clone the `question` variable into a new variable named `questionClone`
@@ -112,7 +118,7 @@ let blogs = [
 var questions = [
   {
     prompt: 'Why is the sky blue?',
-    responses: [
+    responses: [  
       'Because the color blue was on sale at Wallmart',
       'Because blue is the prettiest color',
       'Because the air molecules difract blue light more than any other color',
@@ -129,8 +135,13 @@ var questions = [
 ];
 
 // Your code goes here
-```
+```js
+let questionClone=[
+  {...questions[0],responses:[...questions[0].responses]},
+  {...questions[1],responses:[...questions[1].responses]},
+];
 
+```
 6. Clone the `allBlogs` variable into a new variable named `allBlogsClone`
 
 ```js
@@ -156,8 +167,15 @@ var allBlogs = {
 };
 
 // Your code goes here
-```
+```js
+let allBlogsClone={...allBlogs,
+author:{...allBlogs.author},
+comments:[
+  {...allBlogs.comments[0]} , 
 
+  {...allBlogs.comments[1]} 
+  ]};
+```
 7. Clone the `person` variable into a new variable named `clonedPerson`
 
 ```js
@@ -189,13 +207,36 @@ let person = [
 ];
 
 // Your code goes here
+```js
+let clonedPerson=[
+  {
+    {...person[0].input},
+    {...person[0].output},
+  },
+  {
+    {{...person[1].input.name}},
+    {...person[1].output},
+  },
+  {
+    {...person[2].input},
+    {...person[2].output},
+  },
+  {
+    {
+      {persion[3].input.name},
+      {person[3].input.birthday}
+    },
+    {
+      ...person[3].output
+    },
+  }
+];
 ```
-
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
 
 ```js
 function cloneObject() {
-  // your code
+  return {...cloneObject};
 }
 
 // Run the test below to check your function
